@@ -116,6 +116,16 @@ function getRandom(items) {
   return items[randomNumber];
 }
 
+function printCharacter(name, quote, friend, enemy) {
+  console.log(`
+    What Big Mouth Character are you?
+    You are ${name}
+    Quote: "${quote}"
+    One of your friends: ${friend}
+    One of your enemies: ${enemy}
+    `);
+}
+
 const character = getRandom(characters);
 const quote =
   character.quotes.length === 0
@@ -130,8 +140,4 @@ const enemy =
     ? "You have no enemy."
     : getRandom(character.enemies);
 
-console.log("What Big Mouth Character are you?");
-console.log(`You are ${character.name}`);
-console.log(`Quote: "${quote}"`);
-console.log(`One of your friends: ${friend}`);
-console.log(`One of your enemies: ${enemy}`);
+printCharacter(character.name, quote, friend, enemy);
